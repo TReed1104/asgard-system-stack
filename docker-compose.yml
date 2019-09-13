@@ -1,0 +1,26 @@
+version: "3"
+services:
+    nginx:
+        container_name: heimdall-nginx
+        image: nginx:latest
+        volumes:
+            - ./nginx.conf:/etc/nginx/nginx.conf
+
+    db-mysql:
+        container_name: asgard-db
+        image: mysql:latest
+        command: --init-file /usr/src/app/init.sql
+        volumes:
+            - db_data:/var/lib/mysql
+            - ./api/init.sql:/usr/src/app/init.sql
+        expose:
+            - "3306"
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root_password
+            MYSQL_DATABASE: db_name
+            MYSQL_USER: user_name
+            MYSQL_PASSWORD: password
+
+volumes:
+    db_data: {}
