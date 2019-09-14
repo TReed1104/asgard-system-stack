@@ -17,7 +17,7 @@ services:
         command: --init-file /usr/src/app/init.sql
         volumes:
             - ./mysql/init.sql:/usr/src/app/init.sql
-            #- db_data:/var/lib/mysql
+            - ./volumes/db:/var/lib/mysql
         expose:
             - "3306"
         restart: always
