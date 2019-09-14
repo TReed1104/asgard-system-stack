@@ -1,0 +1,3 @@
+[submodule "heimdall-remote-monitor"]
+	path = heimdall-remote-monitor
+	url = https://github.com/TReed1104/heimdall-remote-monitor.git
