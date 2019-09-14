@@ -1,3 +1,6 @@
 [submodule "heimdall-remote-monitor"]
 	path = heimdall-remote-monitor
 	url = https://github.com/TReed1104/heimdall-remote-monitor.git
+[submodule "mimir-timetabling"]
+	path = mimir-timetabling
+	url = https://github.com/TReed1104/mimir-timetabling.git
