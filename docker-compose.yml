@@ -1,10 +1,10 @@
 version: "3"
 services:
     nginx:
-        container_name: heimdall-nginx
+        container_name: asgard-nginx
         image: nginx:latest
         volumes:
-            - ./nginx.conf:/etc/nginx/nginx.conf
+            - ./nginx/nginx.conf:/etc/nginx/nginx.conf
 
     db-mysql:
         container_name: asgard-db
