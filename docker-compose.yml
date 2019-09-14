@@ -1,18 +1,23 @@
-version: "3"
+version: "3.5"
 services:
     nginx:
         container_name: asgard-nginx
         image: nginx:latest
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+        ports:
+            - 80:80
+            - 443:443
+        networks:
+            - asgard
 
     db-mysql:
         container_name: asgard-db
         image: mysql:latest
         command: --init-file /usr/src/app/init.sql
         volumes:
-            - db_data:/var/lib/mysql
             - ./mysql/init.sql:/usr/src/app/init.sql
+            #- db_data:/var/lib/mysql
         expose:
             - "3306"
         restart: always
@@ -21,6 +26,21 @@ services:
             MYSQL_DATABASE: db_name
             MYSQL_USER: user_name
             MYSQL_PASSWORD: password
+        networks:
+            - asgard
 
-volumes:
-    db_data: {}
+    heimdall-api:
+        container_name: heimdall-api
+        build: ./heimdall-remote-monitor/api
+        image: treed1104/heimdall-api:latest
+        restart: always
+        links:
+            - db-mysql
+        ports:
+            - 5000:5000
+        networks:
+            - asgard
+
+networks:
+    asgard:
+        name: asgard_network
