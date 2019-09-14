@@ -1,0 +1,9 @@
+__pycache__
+.coverage
+testing.cfg
+heimdall.cfg
+.DS_Store
+.vscode
+dist/
+node_modules/
+volumes
