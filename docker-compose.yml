@@ -35,8 +35,8 @@ services:
         restart: always
         links:
             - db-mysql
-        ports:
-            - 5000:5000
+        expose:
+            - "5000"
 
     heimdall-frontend:
         container_name: heimdall-frontend
@@ -55,8 +55,8 @@ services:
         restart: always
         links:
             - db-mysql
-        ports:
-            - 5100:5000
+        expose:
+            - "5000"
 
     mimir-frontend:
         container_name: mimir-frontend
