@@ -13,4 +13,4 @@ echo
 echo ---------------------------------------
 echo Conntainer Status:
 echo ---------------------------------------
-docker ps | grep 'asgard\|heimdall'
+docker ps | grep 'asgard\|heimdall\|mimir'
