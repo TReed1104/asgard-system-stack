@@ -5,6 +5,7 @@ services:
         image: nginx:latest
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./heimdall-remote-monitor/web/dist:/var/www/heimdall
         ports:
             - 80:80
             - 443:443
