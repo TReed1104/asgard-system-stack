@@ -25,20 +25,20 @@ services:
             MYSQL_USER: user_name
             MYSQL_PASSWORD: password
 
-    heimdall:
-        container_name: heimdall
-        build: ./heimdall-remote-monitor
-        image: treed1104/heimdall:latest
+    heimdall-api:
+        container_name: heimdall-api
+        build: ./heimdall-remote-monitor/api
+        image: treed1104/heimdall-api:latest
         restart: always
         links:
             - db-mysql
         ports:
             - 5000:5000
 
-    mimir:
-        container_name: mimir
-        build: ./mimir-timetabling
-        image: treed1104/mimir:latest
+    mimir-api:
+        container_name: mimir-api
+        build: ./mimir-timetabling/api
+        image: treed1104/mimir-api:latest
         restart: always
         links:
             - db-mysql
