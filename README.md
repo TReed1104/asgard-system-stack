@@ -51,6 +51,12 @@ Under Construction
 
 ## Deployment and Installation
 Under Construction
+<br><br>Notes:
+* MySQL settings in docker-composeß
+* Edit Vuex store
+* Copy and config each api connection .cfg
+* Testing scripts
+* Deployment script
 
 <br>
 
