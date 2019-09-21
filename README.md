@@ -51,12 +51,25 @@ Under Construction
 
 ## Deployment and Installation
 Under Construction
-<br><br>Notes:
-* MySQL settings in docker-composeß
-* Edit Vuex store
+<br><br>Ubuntu 16.04/18.04 Install Notes:
+* Ensure your server's package list is up-to-date
+  * sudo apt-get update
+* Install Docker
+  * sudo apt-get install docker.io
+* Install Docker-compose
+  * sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+  * sudo chmod +x /usr/bin/docker-compose
+* MySQL settings in docker-compose
+* Edit Vuex store files
+  * /heimdall-remote-monitor/web/src/store/store.js
 * Copy and config each api connection .cfg
+  * /heimdall-remote-monitor/api/heimdall.cfg
+  * /mimir-timetabling/api/mimir.cfg
 * Testing scripts
+  * /heimdall-remote-monitor/api/test_heimdall.py
+  * /mimir-timetabling/api/test_mimir.py
 * Deployment script
+  * run_asgard_full_deploy.sh
 
 <br>
 
