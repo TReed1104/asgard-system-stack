@@ -50,26 +50,61 @@ Under Construction
 ---
 
 ## Deployment and Installation
-Under Construction
-<br><br>Ubuntu 16.04/18.04 Install Notes:
-* Ensure your server's package list is up-to-date
-  * sudo apt-get update
-* Install Docker
-  * sudo apt-get install docker.io
-* Install Docker-compose
-  * sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
-  * sudo chmod +x /usr/bin/docker-compose
-* MySQL settings in docker-compose
-* Edit Vuex store files
-  * /heimdall-remote-monitor/web/src/store/store.js
-* Copy and config each api connection .cfg
-  * /heimdall-remote-monitor/api/heimdall.cfg
-  * /mimir-timetabling/api/mimir.cfg
-* Testing scripts
-  * /heimdall-remote-monitor/api/test_heimdall.py
-  * /mimir-timetabling/api/test_mimir.py
-* Deployment script
-  * run_asgard_full_deploy.sh
+1. Install Ubuntu Server 16.04
+
+2. Update your system
+```bash
+sudo apt-get update
+sudo apt-get upgrade -y
+```
+
+3. Install Docker
+```bash
+sudo apt-get install docker.io
+```
+
+4. Install Docker-compose from the docker repositories, the version available on the Ubuntu software center is several versions behind.
+```bash
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+sudo chmod +x /usr/bin/docker-compose
+```
+
+5. Edit the MySQL variables in the docker-compose file
+```bash
+Edit lines 25-29 with your own credentials:
+	environment:
+		MYSQL_ROOT_PASSWORD: root_password
+		MYSQL_DATABASE: db_name
+		MYSQL_USER: user_name
+		MYSQL_PASSWORD: password
+```
+
+6. Edit the server address in the Vuex store files
+```bash
+Edit line 10 in heimdall-remote-monitor/web/src/store/store.js, change 127.0.0.1 to your server address:
+	From: serverAddress: "http://127.0.0.1/heimdall-api",
+	To: serverAddress: "http://<server_external_ip>/heimdall-api",
+```
+
+7. Copy the example .cfg files and edit the connection string with your credentials you set in the docker-compose file, make sure you edit EACH of the new .cfg
+```bash
+cp heimdall-remote-monitor/api/example_heimdall.cfg heimdall-remote-monitor/api/heimdall.cfg
+cp mimir-timetabling/api/example.cfg mimir-timetabling/api/mimir.cfg
+
+Edit line 3 in heimdall-remote-monitor/api/heimdall.cfg:
+	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@<host_address>/<database>'
+	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
+
+Edit line 3 in mimir-timetabling/api/mimir.cfg:
+	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@<host_address>/<database>'
+	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
+```
+
+8. Run the deployment script
+```bash
+sudo chmod +x run_asgard_full_deploy.sh
+sudo ./run_asgard_full_deploy.sh
+```
 
 <br>
 
