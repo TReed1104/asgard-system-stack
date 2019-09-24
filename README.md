@@ -71,7 +71,7 @@ sudo chmod +x /usr/bin/docker-compose
 
 5. Edit the MySQL variables in the docker-compose file
 ```bash
-Edit lines 25-29 with your own credentials:
+Edit lines 31-34 with your own credentials:
 	environment:
 		MYSQL_ROOT_PASSWORD: root_password
 		MYSQL_DATABASE: db_name
