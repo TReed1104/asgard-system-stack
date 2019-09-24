@@ -1,4 +1,7 @@
 version: "3.5"
+networks:
+    asgard-network:
+        name: asgard-network
 services:
     nginx:
         container_name: asgard-nginx
@@ -11,6 +14,8 @@ services:
         ports:
             - 80:80
             - 443:443
+        networks:
+            - asgard-network
 
     db-mysql:
         container_name: asgard-db
@@ -23,10 +28,12 @@ services:
             - "3306"
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: 4P5s3Uhy5TjF
-            MYSQL_DATABASE: db_asgard
-            MYSQL_USER: root
-            MYSQL_PASSWORD: 4P5s3Uhy5TjF
+            MYSQL_ROOT_PASSWORD: root_password
+            MYSQL_DATABASE: db_name
+            MYSQL_USER: user_name
+            MYSQL_PASSWORD: password
+        networks:
+            - asgard-network
 
     heimdall-api:
         container_name: heimdall-api
@@ -37,6 +44,8 @@ services:
             - db-mysql
         expose:
             - "5000"
+        networks:
+            - asgard-network
 
     heimdall-frontend:
         container_name: heimdall-frontend
@@ -47,6 +56,8 @@ services:
         links:
             - heimdall-api
         command: "bash -c 'npm install . && npm run build'"
+        networks:
+            - asgard-network
 
     mimir-api:
         container_name: mimir-api
@@ -57,6 +68,8 @@ services:
             - db-mysql
         expose:
             - "5000"
+        networks:
+            - asgard-network
 
     mimir-frontend:
         container_name: mimir-frontend
@@ -67,3 +80,5 @@ services:
         links:
             - mimir-api
         command: "bash -c 'npm install . && npm run build'"
+        networks:
+            - asgard-network
