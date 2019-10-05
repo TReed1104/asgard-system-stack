@@ -11,6 +11,7 @@ services:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
             - ./heimdall-remote-monitor/web/dist:/var/www/heimdall
             - ./mimir-timetabling/web/dist:/var/www/mimir
+            - ./yggdrasil-content-carousel/web/dist:/var/www/yggdrasil
         ports:
             - 80:80
             - 443:443
