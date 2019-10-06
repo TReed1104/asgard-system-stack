@@ -102,8 +102,8 @@ Edit line 3 in mimir-timetabling/api/mimir.cfg:
 
 8. Run the deployment script
 ```bash
-sudo chmod +x run_asgard_full_deploy.sh
-sudo ./run_asgard_full_deploy.sh
+sudo chmod +x deploy_production.sh
+sudo ./deploy_production.sh
 ```
 
 <br>
