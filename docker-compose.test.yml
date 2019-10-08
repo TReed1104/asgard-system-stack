@@ -86,3 +86,29 @@ services:
         command: "bash -c 'npm install . && npm run build'"
         networks:
             - asgard-network
+
+    yggdrasil-api:
+        container_name: yggdrasil-api
+        build:
+            context: ./yggdrasil-content-carousel/api
+            dockerfile: Dockerfile
+        image: treed1104/yggdrasil-api:latest
+        restart: always
+        links:
+            - db-mysql
+        expose:
+            - "5000"
+        networks:
+            - asgard-network
+
+    yggdrasil-frontend:
+        container_name: yggdrasil-frontend
+        image: node:latest
+        volumes:
+            - ./yggdrasil-content-carousel/web:/app
+        working_dir: /app
+        links:
+            - yggdrasil-api
+        command: "bash -c 'npm install . && npm run build'"
+        networks:
+            - asgard-network
