@@ -39,7 +39,7 @@ services:
         container_name: heimdall-api
         build:
             context: ./heimdall-remote-monitor/api
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile-dev
         image: treed1104/heimdall-api:latest
         restart: always
         links:
@@ -65,7 +65,7 @@ services:
         container_name: mimir-api
         build:
             context: ./mimir-timetabling/api
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile-dev
         image: treed1104/mimir-api:latest
         restart: always
         links:
@@ -91,7 +91,7 @@ services:
         container_name: yggdrasil-api
         build:
             context: ./yggdrasil-content-carousel/api
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile-dev
         image: treed1104/yggdrasil-api:latest
         restart: always
         links:
