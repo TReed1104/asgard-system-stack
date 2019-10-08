@@ -11,6 +11,7 @@ services:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
             - ./heimdall-remote-monitor/web/dist:/var/www/heimdall
             - ./mimir-timetabling/web/dist:/var/www/mimir
+            - ./yggdrasil-content-carousel/web/dist:/var/www/yggdrasil
         ports:
             - 80:80
             - 443:443
@@ -23,7 +24,7 @@ services:
         command: --init-file /usr/src/app/init.sql
         volumes:
             - ./mysql/init.sql:/usr/src/app/init.sql
-            - ./volumes/db:/var/lib/mysql
+            - ./volumes/test_db:/var/lib/mysql
         expose:
             - "3306"
         restart: always
@@ -40,7 +41,7 @@ services:
         build:
             context: ./heimdall-remote-monitor/api
             dockerfile: Dockerfile-dev
-        image: treed1104/heimdall-api:latest
+        image: treed1104/heimdall-api-dev:latest
         restart: always
         links:
             - db-mysql
@@ -66,7 +67,7 @@ services:
         build:
             context: ./mimir-timetabling/api
             dockerfile: Dockerfile-dev
-        image: treed1104/mimir-api:latest
+        image: treed1104/mimir-api-dev:latest
         restart: always
         links:
             - db-mysql
@@ -92,7 +93,7 @@ services:
         build:
             context: ./yggdrasil-content-carousel/api
             dockerfile: Dockerfile-dev
-        image: treed1104/yggdrasil-api:latest
+        image: treed1104/yggdrasil-api-dev:latest
         restart: always
         links:
             - db-mysql
