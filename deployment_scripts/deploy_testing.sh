@@ -8,7 +8,7 @@ echo
 echo ---------------------------------------
 echo Building and Deploying Asgard
 echo ---------------------------------------
-docker-compose -f docker-compose.test.yml up -d --build --remove-orphans
+docker-compose -p asgard-stack-testing -f docker-compose.test.yml up -d --build --remove-orphans
 echo
 echo ---------------------------------------
 echo Conntainer Status:
