@@ -60,6 +60,7 @@ services:
             - heimdall-api
         expose:
             - "8080"
+        command: "bash -c 'yarn && yarn run dev'"
         networks:
             - asgard-network
 
@@ -87,6 +88,7 @@ services:
             - mimir-api
         expose:
             - "8080"
+        command: "bash -c 'yarn && yarn run dev'"
         networks:
             - asgard-network
 
@@ -114,5 +116,6 @@ services:
             - yggdrasil-api
         expose:
             - "8080"  
+        command: "bash -c 'yarn && yarn run dev'"
         networks:
             - asgard-network
