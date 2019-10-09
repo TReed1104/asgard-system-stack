@@ -58,7 +58,8 @@ services:
         working_dir: /app
         links:
             - heimdall-api
-        command: "bash -c 'npm install . && npm run build'"
+        expose:
+            - "8080"
         networks:
             - asgard-network
 
@@ -84,7 +85,8 @@ services:
         working_dir: /app
         links:
             - mimir-api
-        command: "bash -c 'npm install . && npm run build'"
+        expose:
+            - "8080"
         networks:
             - asgard-network
 
@@ -110,6 +112,7 @@ services:
         working_dir: /app
         links:
             - yggdrasil-api
-        command: "bash -c 'npm install . && npm run build'"
+        expose:
+            - "8080"  
         networks:
             - asgard-network
