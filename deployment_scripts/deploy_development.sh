@@ -1,5 +1,7 @@
 #!/bin/sh
 echo ---------------------------------------
+echo Deployment Start - Development
+echo ---------------------------------------
 echo Creating Local MySQL storage volume
 echo ---------------------------------------
 mkdir volumes
