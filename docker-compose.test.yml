@@ -42,6 +42,8 @@ services:
             context: ./heimdall-remote-monitor/api
             dockerfile: Dockerfile.test
         image: treed1104/heimdall-api-testing:latest
+        volumes:
+            - ./heimdall-remote-monitor/api:/usr/src/app
         restart: always
         links:
             - db-mysql
@@ -68,6 +70,8 @@ services:
             context: ./mimir-timetabling/api
             dockerfile: Dockerfile.test
         image: treed1104/mimir-api-testing:latest
+        volumes:
+            - ./mimir-timetabling/api:/usr/src/app
         restart: always
         links:
             - db-mysql
@@ -94,6 +98,8 @@ services:
             context: ./yggdrasil-content-carousel/api
             dockerfile: Dockerfile.test
         image: treed1104/yggdrasil-api-testing:latest
+        volumes:
+            - ./yggdrasil-content-carousel/api:/usr/src/app
         restart: always
         links:
             - db-mysql
