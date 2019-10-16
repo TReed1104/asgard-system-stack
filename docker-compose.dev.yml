@@ -69,6 +69,8 @@ services:
             context: ./mimir-timetabling/api
             dockerfile: Dockerfile.dev
         image: treed1104/mimir-api-dev:latest
+        volumes:
+            - ./mimir-timetabling/api:/usr/src/app
         restart: always
         links:
             - db-mysql
@@ -97,6 +99,8 @@ services:
             context: ./yggdrasil-content-carousel/api
             dockerfile: Dockerfile.dev
         image: treed1104/yggdrasil-api-dev:latest
+        volumes:
+            - ./yggdrasil-content-carousel/api:/usr/src/app
         restart: always
         links:
             - db-mysql
