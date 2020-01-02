@@ -119,3 +119,19 @@ services:
         command: "bash -c 'yarn && yarn run build'"
         networks:
             - asgard-network
+
+    odin-api:
+        container_name: odin-api
+        build:
+            context: ./odin-usage-analyser/api
+            dockerfile: Dockerfile.test
+        image: treed1104/odin-api-testing:latest
+        volumes:
+            - ./odin-usage-analyser/api:/usr/src/app
+        restart: always
+        links:
+            - db-mysql
+        expose:
+            - "5000"
+        networks:
+            - asgard-network
