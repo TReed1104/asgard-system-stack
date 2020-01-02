@@ -7,3 +7,6 @@
 [submodule "yggdrasil-content-carousel"]
 	path = yggdrasil-content-carousel
 	url = https://github.com/TReed1104/yggdrasil-content-carousel.git
+[submodule "odin-usage-analyser"]
+	path = odin-usage-analyser
+	url = https://github.com/TReed1104/odin-usage-analyser.git

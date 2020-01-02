@@ -29,10 +29,10 @@ services:
             - "3306"
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: root_password
-            MYSQL_DATABASE: db_name
-            MYSQL_USER: user_name
-            MYSQL_PASSWORD: password
+            MYSQL_ROOT_PASSWORD: pL3m6VursT7BEmn
+            MYSQL_DATABASE: db_asgard
+            MYSQL_USER: root
+            MYSQL_PASSWORD: pL3m6VursT7BEmn
         networks:
             - asgard-network
 
