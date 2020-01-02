@@ -88,8 +88,10 @@ Edit line 10 in heimdall-remote-monitor/web/src/store/store.js, change 127.0.0.1
 
 7. Copy the example .cfg files and edit the connection string with your credentials you set in the docker-compose file, make sure you edit EACH of the new .cfg
 ```bash
-cp heimdall-remote-monitor/api/example_heimdall.cfg heimdall-remote-monitor/api/heimdall.cfg
-cp mimir-timetabling/api/example.cfg mimir-timetabling/api/mimir.cfg
+cp heimdall-remote-monitor/api/configs/main.cfg heimdall-remote-monitor/api/configs/main.cfg
+cp mimir-timetabling/api/configs/main.cfg mimir-timetabling/api/configs/main.cfg
+cp yggdrasil-content-carousel/api/configs/main.cfg yggdrasil-content-carousel/api/configs/main.cfg
+cp odin-usage-analyser/api/configs/main.cfg odin-usage-analyser/api/configs/main.cfg
 
 Edit line 3 in heimdall-remote-monitor/api/heimdall.cfg:
 	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@<host_address>/<database>'
@@ -103,7 +105,7 @@ Edit line 3 in mimir-timetabling/api/mimir.cfg:
 8. Run the deployment script
 ```bash
 sudo chmod +x deployment_scripts/deploy_production.sh
-sudo ./deployment_scripts//deploy_production.sh
+sudo ./deployment_scripts/deploy_production.sh
 ```
 
 <br>
