@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <h1 class="page-title">Webpack Template</h1>
-        <p>Welcome to my Webpack template, the template uses Vue.js, SCSS and the Bootstrap framework.</p>
+        <h1 class="page-title">Asgard</h1>
+        <p>Welcome to the work in progress landing page for Asgard.</p>
     </div>
 </template>
 
