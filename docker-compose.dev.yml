@@ -26,10 +26,18 @@ services:
             - "3306"
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: root_password
-            MYSQL_DATABASE: db_name
-            MYSQL_USER: user_name
-            MYSQL_PASSWORD: password
+        networks:
+            - asgard-network
+
+    asgard-frontend:
+        container_name: asgard-frontend
+        image: node:latest
+        volumes:
+            - ./web:/app
+        working_dir: /app
+        expose:
+            - "8080"
+        command: "bash -c 'yarn && yarn run dev'"
         networks:
             - asgard-network
 
