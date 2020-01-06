@@ -8,6 +8,9 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <router-link tag="a" class="nav-item nav-link" :to="{name: 'Index'}">Home</router-link>
+                    <a class="nav-item nav-link" href="/heimdall">Heimdall</a>
+                    <a class="nav-item nav-link" href="/mimir">Mimir</a>
+                    <a class="nav-item nav-link" href="/yggdrasil">Yggdrasil</a>
                 </div>
             </div>
         </nav>
