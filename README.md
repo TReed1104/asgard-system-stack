@@ -83,7 +83,15 @@ Edit lines 31-34 with your own credentials:
 ```bash
 Edit line 10 in heimdall-remote-monitor/web/src/store/store.js, change 127.0.0.1 to your server address:
 	From: serverAddress: "http://127.0.0.1/heimdall-api",
-	To: serverAddress: "http://<server_external_ip>/heimdall-api",
+	To: serverAddress: "http://<server_external_ip>/heimdall-api"
+
+Edit line 10 in mimir-timetabling/web/src/store/store.js, change 127.0.0.1 to your server address:
+	From: serverAddress: "http://127.0.0.1/mimir-api",
+	To: serverAddress: "http://<server_external_ip>/mimir-api"
+
+Edit line 10 in yggdrasil-content-carousel/web/src/store/store.js, change 127.0.0.1 to your server address:
+	From: serverAddress: "http://127.0.0.1/yggdrasil-api",
+	To: serverAddress: "http://<server_external_ip>/yggdrasil-api"
 ```
 
 7. Copy the example .cfg files and edit the connection string with your credentials you set in the docker-compose file, make sure you edit EACH of the new .cfg
@@ -98,6 +106,10 @@ Edit line 3 in heimdall-remote-monitor/api/heimdall.cfg:
 	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
 
 Edit line 3 in mimir-timetabling/api/mimir.cfg:
+	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@<host_address>/<database>'
+	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
+
+Edit line 3 in yggdrasil-content-carousel/api/mimir.cfg:
 	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@<host_address>/<database>'
 	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
 ```
