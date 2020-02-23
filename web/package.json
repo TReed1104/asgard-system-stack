@@ -5,9 +5,9 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "cross-env webpack --config build/webpack.config.js",
-        "dev-local": "cross-env webpack-dev-server --config build/webpack.config.js",
-        "dev": "cross-env webpack-dev-server --config build/webpack.config.js --host 0.0.0.0"
+        "build": "cross-env webpack --config build/webpack.production.config.js",
+        "dev-local": "cross-env webpack-dev-server --config build/webpack.develoment.config.js",
+        "dev": "cross-env webpack-dev-server --config build/webpack.development.config.js --host 0.0.0.0"
     },
     "author": {
         "name": "Tom Reed"
