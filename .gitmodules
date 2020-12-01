@@ -19,3 +19,6 @@
 [submodule "yggdrasil-frontend"]
 	path = yggdrasil-frontend
 	url = https://github.com/TReed1104/yggdrasil-frontend
+[submodule "heimdall-client"]
+	path = heimdall-client
+	url = https://github.com/treed1104/heimdall-client
