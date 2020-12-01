@@ -1,0 +1,3 @@
+[submodule "heimdall-api"]
+	path = heimdall-api
+	url = https://github.com/TReed1104/heimdall-api
