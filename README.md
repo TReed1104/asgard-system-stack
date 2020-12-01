@@ -81,35 +81,35 @@ Edit lines 31-34 with your own credentials:
 
 6. Edit the server address in the Vuex store files
 ```bash
-Edit line 10 in heimdall-remote-monitor/web/src/store/store.js, change 127.0.0.1 to your server address:
+Edit line 10 in heimdall-frontend/app/src/store/store.js, change 127.0.0.1 to your server address:
 	From: serverAddress: "http://127.0.0.1/heimdall-api",
 	To: serverAddress: "http://<server_external_ip>/heimdall-api"
 
-Edit line 10 in mimir-timetabling/web/src/store/store.js, change 127.0.0.1 to your server address:
+Edit line 10 in mimir-frontend/app/src/store/store.js, change 127.0.0.1 to your server address:
 	From: serverAddress: "http://127.0.0.1/mimir-api",
 	To: serverAddress: "http://<server_external_ip>/mimir-api"
 
-Edit line 10 in yggdrasil-content-carousel/web/src/store/store.js, change 127.0.0.1 to your server address:
+Edit line 10 in yggdrasil-frontend/app/src/store/store.js, change 127.0.0.1 to your server address:
 	From: serverAddress: "http://127.0.0.1/yggdrasil-api",
 	To: serverAddress: "http://<server_external_ip>/yggdrasil-api"
 ```
 
 7. Copy the example .cfg files and edit the connection string with your credentials you set in the docker-compose file, make sure you edit EACH of the new .cfg
 ```bash
-cp heimdall-remote-monitor/api/configs/main.cfg heimdall-remote-monitor/api/configs/main.cfg
-cp mimir-timetabling/api/configs/main.cfg mimir-timetabling/api/configs/main.cfg
-cp yggdrasil-content-carousel/api/configs/main.cfg yggdrasil-content-carousel/api/configs/main.cfg
-cp odin-usage-analyser/api/configs/main.cfg odin-usage-analyser/api/configs/main.cfg
+cp heimdall-api/api/configs/main.cfg heimdall-api/api/configs/main.cfg
+cp mimir-api/api/configs/main.cfg mimir-api/api/configs/main.cfg
+cp yggdrasil-api/api/configs/main.cfg yggdrasil-api/api/configs/main.cfg
+cp odin-api/api/configs/main.cfg odin-apir/api/configs/main.cfg
 
-Edit line 3 in heimdall-remote-monitor/api/heimdall.cfg:
+Edit line 3 in heimdall-api/api/heimdall.cfg:
 	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@<host_address>/<database>'
 	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
 
-Edit line 3 in mimir-timetabling/api/mimir.cfg:
+Edit line 3 in mimir-api/api/mimir.cfg:
 	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@<host_address>/<database>'
 	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
 
-Edit line 3 in yggdrasil-content-carousel/api/mimir.cfg:
+Edit line 3 in yggdrasil-api/api/mimir.cfg:
 	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@<host_address>/<database>'
 	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
 ```
