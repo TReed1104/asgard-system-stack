@@ -7,3 +7,6 @@
 [submodule "mimir-api"]
 	path = mimir-api
 	url = https://github.com/TReed1104/mimir-api
+[submodule "mimir-frontend"]
+	path = mimir-frontend
+	url = https://github.com/TReed1104/mimir-frontend
