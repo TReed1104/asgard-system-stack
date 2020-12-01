@@ -1,12 +1,21 @@
-[submodule "heimdall-remote-monitor"]
-	path = heimdall-remote-monitor
-	url = https://github.com/TReed1104/heimdall-remote-monitor.git
-[submodule "mimir-timetabling"]
-	path = mimir-timetabling
-	url = https://github.com/TReed1104/mimir-timetabling.git
-[submodule "yggdrasil-content-carousel"]
-	path = yggdrasil-content-carousel
-	url = https://github.com/TReed1104/yggdrasil-content-carousel.git
-[submodule "odin-usage-analyser"]
-	path = odin-usage-analyser
-	url = https://github.com/TReed1104/odin-usage-analyser.git
+[submodule "heimdall-api"]
+	path = heimdall-api
+	url = https://github.com/TReed1104/heimdall-api
+[submodule "heimdall-frontend"]
+	path = heimdall-frontend
+	url = https://github.com/TReed1104/heimdall-frontend
+[submodule "mimir-api"]
+	path = mimir-api
+	url = https://github.com/TReed1104/mimir-api
+[submodule "mimir-frontend"]
+	path = mimir-frontend
+	url = https://github.com/TReed1104/mimir-frontend
+[submodule "odin-api"]
+	path = odin-api
+	url = https://github.com/TReed1104/odin-api
+[submodule "yggdrasil-api"]
+	path = yggdrasil-api
+	url = https://github.com/TReed1104/yggdrasil-api
+[submodule "yggdrasil-frontend"]
+	path = yggdrasil-frontend
+	url = https://github.com/TReed1104/yggdrasil-frontend
