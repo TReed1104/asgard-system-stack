@@ -4,3 +4,6 @@
 [submodule "heimdall-frontend"]
 	path = heimdall-frontend
 	url = https://github.com/TReed1104/heimdall-frontend
+[submodule "mimir-api"]
+	path = mimir-api
+	url = https://github.com/TReed1104/mimir-api
