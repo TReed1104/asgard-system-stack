@@ -13,3 +13,6 @@
 [submodule "odin-api"]
 	path = odin-api
 	url = https://github.com/TReed1104/odin-api
+[submodule "yggdrasil-api"]
+	path = yggdrasil-api
+	url = https://github.com/TReed1104/yggdrasil-api
