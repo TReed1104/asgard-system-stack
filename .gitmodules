@@ -16,3 +16,6 @@
 [submodule "yggdrasil-api"]
 	path = yggdrasil-api
 	url = https://github.com/TReed1104/yggdrasil-api
+[submodule "yggdrasil-frontend"]
+	path = yggdrasil-frontend
+	url = https://github.com/TReed1104/yggdrasil-frontend
