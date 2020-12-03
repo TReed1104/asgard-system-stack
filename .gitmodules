@@ -22,3 +22,6 @@
 [submodule "heimdall-client"]
 	path = heimdall-client
 	url = https://github.com/treed1104/heimdall-client
+[submodule "asgard-frontend"]
+	path = asgard-frontend
+	url = https://github.com/treed1104/asgard-frontend

@@ -37,7 +37,7 @@ services:
         container_name: asgard-frontend-dev
         image: node:latest
         volumes:
-            - ./web:/app
+            - ./asgard-frontend/app:/app
         working_dir: /app
         expose:
             - "8080"
