@@ -1,16 +1,13 @@
 # Asgard
 ## What is Asgard?
-Asgard is a micro-service cluster designed and developed by the School of Computer Science's Technical team, at The Unniversity of Lincoln.
+Asgard is a micro-service cluster designed and developed by the School of Computer Science's Technical team at The Unniversity of Lincoln.
 
-The cluster itself has been designed to be scalable microservice architecture, providing a cloud based "Infrastructure as a Service" software stack.
+Each service has been designed and developed with the microservice architecture pattern in mind for scalability and reliability.
 
-The project uses the following technologies:
-- Docker
-- NGINX
-- MySQL
-- Flask
-- Node
-- Vue.js
+The following template repositories are available for generating new services or frontend apps for the stack:
+
+- [Frontend VueJs Web Apps](https://github.com/treed1104/template-webpack-vue) - Javascript/Typescript Vue
+- [Backend REST API](https://github.com/TReed1104/template-flask-restful) - Python3 Flask
 
 <br>
 
