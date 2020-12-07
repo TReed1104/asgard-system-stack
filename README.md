@@ -120,21 +120,3 @@ Edit line 3 in yggdrasil-api/api/mimir.cfg:
 sudo chmod +x deployment_scripts/deploy_production.sh
 sudo ./deployment_scripts/deploy_production.sh
 ```
-
-<br>
-
----
-
-## Testing
-Under Construction
-
-<br>
-
----
-
-## Usage Guide
-Unnder Construction
-
-<br>
-
----
