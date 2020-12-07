@@ -18,15 +18,19 @@ Asgard is currently provides the following services:
 - Heimdall
 - Mimir
 - Yggdrasil
+- Odin
 
 ### Heimdall
 Heimdall is a remote monitoring system, used to monitor the operational status of the computers in the School's computing labs. The system also provides a "Find a PC" system for our students.
 
 ### Mimir
-Mimir is our timetabling engine, providing the ability for us to generate our own timetables for rooms and labs. Functionality is currently in the works to provide a direct line of communnication of the University central timetabling system.
+Mimir is our timetabling engine, providing the ability for us to generate our own timetables for rooms and labs.
 
 ### Yggdrail
 Yggdrasil is a content carousel display system, providing the ability to remotely assign carousels of custom content to display screens across campus. Yggdrasil has the ability to communicate with Heimdall and Mimir directly, allowing for the embedding of the lab availability and calenders into its content carousels.
+
+### Odin
+Odin is a service developed for analysing the utilisation of the facilities and functionality of the service in the Asgard System Stack.
 
 <br>
 
