@@ -44,7 +44,34 @@ Under Construction
 ---
 
 ## Dependencies and Libraries
-Under Construction
+### Deployment
+- Docker
+- Docker-compose
+
+### Reverse Proxy
+- NGINX
+
+### Database
+- Mysql
+
+### Frontend
+- Node
+- Webpack
+- Babel
+- Javascript
+- Typescript
+- Vue
+- Sass
+- Scss
+- Yarn
+- Axiom
+
+### Backend
+- Python
+- Flask
+- Flask-Restful
+- SQLAlchemy
+- JSON
 
 <br>
 
