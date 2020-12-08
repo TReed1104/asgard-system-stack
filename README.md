@@ -77,7 +77,8 @@ Under Construction
 
 ---
 
-## Deployment and Installation
+## Setup
+### Host Installation
 1. Install Ubuntu Server 16.04
 
 2. Update your system
@@ -97,17 +98,23 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-
 sudo chmod +x /usr/bin/docker-compose
 ```
 
-5. Edit the MySQL variables in the docker-compose file
+### Asgard Deployment
+1. Clone the repository
+```bash
+git clone https://github.com/treed1104/asgard-system-stack.git --recursive
+```
+
+2. Edit the MySQL variables in the docker-compose file
 ```bash
 Edit lines 33-36 with your own credentials:
 	environment:
-		MYSQL_ROOT_PASSWORD: root_password
-		MYSQL_DATABASE: db_name
-		MYSQL_USER: user_name
-		MYSQL_PASSWORD: password
+        MYSQL_ROOT_PASSWORD: <PASSWORD>
+        MYSQL_DATABASE: <DATABASE_NAME>
+        MYSQL_USER: <USER>
+        MYSQL_PASSWORD: <PASSWORD>
 ```
 
-6. Edit the server address in the Vuex store files
+3. Edit the server address in the Vuex store files
 ```bash
 Edit line 10 in heimdall-frontend/app/src/store/store.js, change 127.0.0.1 to your server address:
 	From: serverAddress: "http://127.0.0.1/heimdall-api",
@@ -122,27 +129,42 @@ Edit line 10 in yggdrasil-frontend/app/src/store/store.js, change 127.0.0.1 to y
 	To: serverAddress: "http://<server_external_ip>/yggdrasil-api"
 ```
 
-7. Copy the example .cfg files and edit the connection string with your credentials you set in the docker-compose file, make sure you edit EACH of the new .cfg
+4. make a copy of the example config files ready to enter your setup connection details from step 2.
 ```bash
 cp heimdall-api/api/configs/main.cfg heimdall-api/api/configs/main.cfg
 cp mimir-api/api/configs/main.cfg mimir-api/api/configs/main.cfg
 cp yggdrasil-api/api/configs/main.cfg yggdrasil-api/api/configs/main.cfg
-cp odin-api/api/configs/main.cfg odin-apir/api/configs/main.cfg
+cp odin-api/api/configs/main.cfg odin-api/api/configs/main.cfg
+```
 
-Edit line 3 in heimdall-api/api/heimdall.cfg:
-	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@<host_address>/<database>'
+5. Edit each of the new .cfg replacing the connection strings with your username, password and database name that you set in step 2.
+```bash
+Edit line 3 in heimdall-api/api/configs/main.cfg:
+	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_heimdall_api'
 	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
 
-Edit line 3 in mimir-api/api/mimir.cfg:
-	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@<host_address>/<database>'
+Edit line 3 in mimir-api/api/configs/main.cfg:
+	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_mimir_api'
 	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
 
-Edit line 3 in yggdrasil-api/api/mimir.cfg:
-	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@<host_address>/<database>'
+Edit line 3 in yggdrasil-api/api/configs/main.cfg:
+	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_yggdrasil_api'
+	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
+
+Edit line 3 in odinl-api/api/configs/main.cfg:
+	From: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_odin_api'
 	To: SQLALCHEMY_DATABASE_URI='mysql://<user>:<password>@db-mysql:3306/db_asgard'
 ```
 
-8. Run the deployment script
+6. Edit the Odin API config to point to the host address for the other microservices
+``` bash
+Edit line 6-8 in odinl-api/api/configs/main.cfg:
+	HEIMDALL_API='http://<asgard_host_address>/heimdall-api'
+	MIMIR_API='http://<asgard_host_address>/mimir-api'
+	YGGDRASIL_API='http://<asgard_host_address>/yggdrasil-api'
+```
+
+7. Run the deployment script
 ```bash
 sudo chmod +x deployment_scripts/deploy_production.sh
 sudo ./deployment_scripts/deploy_production.sh
