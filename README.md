@@ -37,7 +37,15 @@ Odin is a service developed for analysing the utilisation of the facilities and 
 ---
 
 ## Repository Structure
-Under Construction
+The repository structure is as follows:
+- ./deployment_scripts/ - contains the bash scripts used for easier deployment via Docker.
+- ./mysql/ - contains the initialisation config for the Mysql container.
+- ./nginx/ - contains the configuration files for the Nginx reverse proxy container.
+- ./docker-compose.yml - The producation Docker-compose configuration.
+- ./docker-compose.dev.yml - The development Docker-compose configuration.
+- ./README.md - This project README.
+- ./**service-name**-frontend/ - The frontend end source code for the corresponding web app within the stack.
+- ./**service-name**-api/ - The backend API source code for the corresponding REST API within the stack.
 
 <br>
 
