@@ -25,3 +25,6 @@
 [submodule "asgard-frontend"]
 	path = asgard-frontend
 	url = https://github.com/treed1104/asgard-frontend
+[submodule "yggdrasil-client"]
+	path = yggdrasil-client
+	url = https://github.com/TReed1104/yggdrasil-client
